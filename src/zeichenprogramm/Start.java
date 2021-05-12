@@ -6,11 +6,11 @@
 
 package zeichenprogramm;
 
-import java.awt.Window;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import zeichenprogramm.controller.ViewController;
 import zeichenprogramm.model.ViewModel;
+import zeichenprogramm.view.Ansicht;
 import zeichenprogramm.view.View;
 
 /**
@@ -23,15 +23,25 @@ public class Start
   {
     View view = new View();
     ViewModel model = new ViewModel();
+    Ansicht window = new Ansicht();
+    
     view.setModel(model);
-    ViewController controller = new ViewController(view, model);
+    ViewController controller = new ViewController(view, model, window);
     controller.registerEvents();
     
-    JFrame frm = new JFrame();
-    frm.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    frm.setContentPane(view);
-    frm.setSize(800,600);
-    frm.setVisible(true);
+//    JFrame frm = new JFrame();
+//    frm.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//    frm.setContentPane(view);
+//    frm.setSize(800,600);
+//    frm.setVisible(true);
+    
+    
+    window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    window.getContentPane().add(view);
+    window.setSize(800,600);
+    window.setVisible(true);
+    
+    
   }
 
   public static void main(String[] args) 

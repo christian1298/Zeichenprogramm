@@ -66,7 +66,7 @@ public class View extends JComponent implements Printable
         
         line.setLine(lastPoint, k);
         g2.draw(line);
-        //lastPoint = k;
+        lastPoint = k;
       });
     });
   }

@@ -13,6 +13,38 @@ public class Ansicht extends javax.swing.JFrame
 {
 
   /**
+   * @return the FC
+   */
+  public javax.swing.JFileChooser getFC()
+  {
+    return FC;
+  }
+
+  /**
+   * @return the BtnLoad
+   */
+  public javax.swing.JButton getBtnLoad()
+  {
+    return BtnLoad;
+  }
+
+  /**
+   * @return the BtnPrint
+   */
+  public javax.swing.JButton getBtnPrint()
+  {
+    return BtnPrint;
+  }
+
+  /**
+   * @return the BtnSave
+   */
+  public javax.swing.JButton getBtnSave()
+  {
+    return BtnSave;
+  }
+
+  /**
    * Creates new form Ansicht
    */
   public Ansicht()
@@ -30,43 +62,44 @@ public class Ansicht extends javax.swing.JFrame
   private void initComponents()
   {
 
+    FC = new javax.swing.JFileChooser();
     jToolBar1 = new javax.swing.JToolBar();
-    jButton1 = new javax.swing.JButton();
-    jButton2 = new javax.swing.JButton();
-    jButton3 = new javax.swing.JButton();
+    BtnSave = new javax.swing.JButton();
+    BtnLoad = new javax.swing.JButton();
+    BtnPrint = new javax.swing.JButton();
     jPanel1 = new javax.swing.JPanel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     jToolBar1.setRollover(true);
 
-    jButton1.setMnemonic('S');
-    jButton1.setText("Save");
-    jButton1.setFocusable(false);
-    jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-    jButton1.addActionListener(new java.awt.event.ActionListener()
+    BtnSave.setMnemonic('S');
+    BtnSave.setText("Save");
+    BtnSave.setFocusable(false);
+    BtnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    BtnSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    BtnSave.addActionListener(new java.awt.event.ActionListener()
     {
       public void actionPerformed(java.awt.event.ActionEvent evt)
       {
-        jButton1ActionPerformed(evt);
+        BtnSaveActionPerformed(evt);
       }
     });
-    jToolBar1.add(jButton1);
+    jToolBar1.add(BtnSave);
 
-    jButton2.setMnemonic('L');
-    jButton2.setText("Load");
-    jButton2.setFocusable(false);
-    jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-    jToolBar1.add(jButton2);
+    BtnLoad.setMnemonic('L');
+    BtnLoad.setText("Load");
+    BtnLoad.setFocusable(false);
+    BtnLoad.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    BtnLoad.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    jToolBar1.add(BtnLoad);
 
-    jButton3.setMnemonic('P');
-    jButton3.setText("Print");
-    jButton3.setFocusable(false);
-    jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-    jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-    jToolBar1.add(jButton3);
+    BtnPrint.setMnemonic('P');
+    BtnPrint.setText("Print");
+    BtnPrint.setFocusable(false);
+    BtnPrint.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    BtnPrint.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    jToolBar1.add(BtnPrint);
 
     getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
@@ -86,10 +119,10 @@ public class Ansicht extends javax.swing.JFrame
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-  {//GEN-HEADEREND:event_jButton1ActionPerformed
+  private void BtnSaveActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BtnSaveActionPerformed
+  {//GEN-HEADEREND:event_BtnSaveActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_jButton1ActionPerformed
+  }//GEN-LAST:event_BtnSaveActionPerformed
 
   /**
    * @param args the command line arguments
@@ -141,9 +174,10 @@ public class Ansicht extends javax.swing.JFrame
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
-  private javax.swing.JButton jButton2;
-  private javax.swing.JButton jButton3;
+  private javax.swing.JButton BtnLoad;
+  private javax.swing.JButton BtnPrint;
+  private javax.swing.JButton BtnSave;
+  private javax.swing.JFileChooser FC;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JToolBar jToolBar1;
   // End of variables declaration//GEN-END:variables
