@@ -65,9 +65,9 @@ public class ViewController extends MouseAdapter implements MouseMotionListener,
   public void mouseDragged(MouseEvent e)
   {
     Point p = e.getPoint();
-    model.addPoint(p);
-    Point k = model.getFigure().getLastPoint();
-    view.drawPoint(p, k);
+    //model.addPoint(p);
+    //Point k = model.getFigure().getLastPoint();
+    view.drawPoint(p);
   }
 
   @Override
@@ -88,6 +88,7 @@ public class ViewController extends MouseAdapter implements MouseMotionListener,
           try
           {
             model.loadPoints(f.getAbsolutePath());
+            view.repaint();
           }
           catch (IOException ex)
           {
@@ -102,7 +103,7 @@ public class ViewController extends MouseAdapter implements MouseMotionListener,
     if(e.getSource() == window.getBtnSave())
     {
         JFileChooser fc = window.getFC();
-        int choice = fc.showOpenDialog(window);
+        int choice = fc.showSaveDialog(window);
         if(choice == JFileChooser.APPROVE_OPTION)
         {
           File f = fc.getSelectedFile();

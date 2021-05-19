@@ -19,15 +19,19 @@ import java.util.List;
 public class Figur implements Serializable
 {
   private ArrayList<Point> points;
+  private Point lastPoint;
   
   public Figur()
   {
     points = new ArrayList<>();
+    //lastPoint = new Point();
+    lastPoint = null;
   }
     
   public void addPoint(Point p)
   {
     points.add(p);
+    lastPoint = p;
   }
   
   public List<Point> getPoints()
@@ -35,15 +39,13 @@ public class Figur implements Serializable
     return Collections.unmodifiableList(points);
   }
   
-  public Point getLastPoint()
+  public Point getlP()
   {
-    if(points.size() >= 2)
-    {
-      return points.get(points.size()-2);
-    }
-    else
-    {
-      return points.get(0);
-    }
+    return lastPoint;
+  }
+  
+  public void setlP(Point p)
+  {
+    lastPoint = p;
   }
 }

@@ -27,6 +27,7 @@ public class ViewModel
 {
   private ArrayList<Figur> figures;
   private Figur figur;
+  
   public ViewModel()
   {
     figures = new ArrayList<>();
@@ -37,6 +38,16 @@ public class ViewModel
   public void addPoint(Point p)
   {
     figur.addPoint(p);
+  }
+  
+  public Point getPoint()
+  {
+    return figur.getlP();
+  }
+  
+  public void setPoint(Point p)
+  {
+    figur.setlP(p);
   }
   
   public void addFigure()

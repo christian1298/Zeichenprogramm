@@ -21,9 +21,10 @@ public class Start
 {
   public Start()
   {
-    View view = new View();
-    ViewModel model = new ViewModel();
     Ansicht window = new Ansicht();
+    //View view = new View();
+    View view = window.getView1();
+    ViewModel model = new ViewModel();
     
     view.setModel(model);
     ViewController controller = new ViewController(view, model, window);
@@ -37,7 +38,7 @@ public class Start
     
     
     window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    window.getContentPane().add(view);
+    //window.getContentPane().add(view);
     window.setSize(800,600);
     window.setVisible(true);
     

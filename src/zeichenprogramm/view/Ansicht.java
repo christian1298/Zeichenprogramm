@@ -67,7 +67,7 @@ public class Ansicht extends javax.swing.JFrame
     BtnSave = new javax.swing.JButton();
     BtnLoad = new javax.swing.JButton();
     BtnPrint = new javax.swing.JButton();
-    jPanel1 = new javax.swing.JPanel();
+    view1 = new zeichenprogramm.view.View();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,19 +102,7 @@ public class Ansicht extends javax.swing.JFrame
     jToolBar1.add(BtnPrint);
 
     getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
-
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 400, Short.MAX_VALUE)
-    );
-    jPanel1Layout.setVerticalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 272, Short.MAX_VALUE)
-    );
-
-    getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+    getContentPane().add(view1, java.awt.BorderLayout.CENTER);
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
@@ -178,7 +166,15 @@ public class Ansicht extends javax.swing.JFrame
   private javax.swing.JButton BtnPrint;
   private javax.swing.JButton BtnSave;
   private javax.swing.JFileChooser FC;
-  private javax.swing.JPanel jPanel1;
   private javax.swing.JToolBar jToolBar1;
+  private zeichenprogramm.view.View view1;
   // End of variables declaration//GEN-END:variables
+
+  /**
+   * @return the view1
+   */
+  public zeichenprogramm.view.View getView1()
+  {
+    return view1;
+  }
 }

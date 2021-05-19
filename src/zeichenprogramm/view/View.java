@@ -30,12 +30,15 @@ import zeichenprogramm.model.ViewModel;
 public class View extends JComponent implements Printable
 {
   //private final static Dimension DIM_ONE = new Dimension(1,1);
-  private Point lastPoint = new Point();
-  private Line2D.Float line = new Line2D.Float();
+  
+  private Line2D.Float line;
   private ViewModel model;
+  private Point p0;
   
   public View()
   {
+
+    line = new Line2D.Float();
   }
   
   public void setModel(ViewModel model)
@@ -43,14 +46,19 @@ public class View extends JComponent implements Printable
     this.model = model;
   }
   
-  public void drawPoint(Point p, Point k)
+  public void drawPoint(Point p)
   {
     Graphics2D g2 = (Graphics2D)this.getGraphics();
-    
-    line.setLine(k, p);
+    if(model.getPoint() == null)
+    {
+      model.addPoint(p);
+    }
+    else
+    {
+    line.setLine(model.getPoint(), p);
     g2.draw(line);
-    //lastPoint = p;
-    
+    model.addPoint(p);
+    }
     g2.dispose();
   }
   
@@ -60,13 +68,16 @@ public class View extends JComponent implements Printable
     super.paintComponent(g);
     Graphics2D g2 = (Graphics2D)g;
 
-    model.getFigures().forEach(p->
+    model.getFigures().forEach(f->
     {
-      p.getPoints().forEach(k->{
-        
-        line.setLine(lastPoint, k);
-        g2.draw(line);
-        lastPoint = k;
+      p0 = null;
+      f.getPoints().forEach(p->{
+        if(p0 != null)
+        {
+          line.setLine(p0, p);
+          g2.draw(line);
+        }
+        p0 = p;      
       });
     });
   }
